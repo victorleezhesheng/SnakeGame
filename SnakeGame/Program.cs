@@ -61,6 +61,26 @@ namespace SnakeGame
             // whether to keep trails
             bool trail = false;
 
+             //Location to spawn obstacle
+            List<Index> obstacles = new List<Index>() {
+                new Index(rand.Next(10,20)/*hieght*/,rand.Next(0,70)/*Width*/),
+                new Index(rand.Next( 1,20),rand.Next (34,70)),
+                new Index(rand.Next(14,20),rand.Next(12,70)),
+                new Index(rand.Next(8,20),rand.Next(26,70)),
+                new Index(rand.Next(2,20),rand.Next(3,70)),
+                new Index(rand.Next(2,20),rand.Next(1,70)),
+                new Index(rand.Next(4,20),rand.Next(3,70)),
+                new Index(rand.Next(1,20),rand.Next(1,70)),
+            };
+
+            //Spawning obstacle
+            foreach (Index obstacle in obstacles)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.SetCursorPosition(obstacle.indexx, obstacle.indexy);
+                Console.Write("#");
+            }
+
             
 
 
