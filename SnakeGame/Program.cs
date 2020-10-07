@@ -190,7 +190,15 @@ namespace SnakeGame
 
             } while (gameLive);
 
-            
+            Console.Clear();
+            // Added Game Over Screen: Lee Zhe Sheng
+            ConsoleColor game_over = Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(50, 10);
+            Console.Write(" ========Game Over======== ");
+            Console.SetCursorPosition(50, 11);
+            Console.WriteLine("Press 'Enter' to Play Again");
+            Console.ForegroundColor = game_over;
+            Console.ReadKey();
 
         }
     }
