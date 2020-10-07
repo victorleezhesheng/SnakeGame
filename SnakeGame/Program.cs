@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SnakeGame
 {
@@ -30,14 +31,11 @@ namespace SnakeGame
 
     }
 
+
     class Program
     {
-        static void Main(string[] args)
+        public void Run()
         {
-            // start game
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-
             // display this char on the console during the game
             char ch = '*';
             bool gameLive = true;
@@ -53,7 +51,7 @@ namespace SnakeGame
             Random rand = new Random(); //inputs random numbers
 
             // clear to color
-             Console.BackgroundColor = ConsoleColor.Black; //the background of the colour
+            Console.BackgroundColor = ConsoleColor.Black; //the background of the colour
             Console.Clear();
 
             // delay to slow down the character movement so you can see it
@@ -62,7 +60,7 @@ namespace SnakeGame
             // whether to keep trails
             bool trail = false;
 
-             //Location to spawn obstacle
+            //Location to spawn obstacle
             List<Index> obstacles = new List<Index>() {
                 new Index(rand.Next(10,20)/*hieght*/,rand.Next(0,70)/*Width*/),
                 new Index(rand.Next( 1,20),rand.Next (34,70)),
@@ -101,8 +99,6 @@ namespace SnakeGame
             Console.Write("@");
 
 
-
-
             do // until escape
             {
                 // print directions at top, then restore position
@@ -114,7 +110,7 @@ namespace SnakeGame
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
 
-                 //Added a score board: Jonathan
+                //Added a score board: Jonathan
                 ConsoleColor score = Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.SetCursorPosition(100, 0);
                 Console.Write("Score: 0");
@@ -190,16 +186,52 @@ namespace SnakeGame
 
             } while (gameLive);
 
-            Console.Clear();
+        }
+
+        public void GameOver()
+        {
             // Added Game Over Screen: Lee Zhe Sheng
+            Console.Clear();
             ConsoleColor game_over = Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(50, 10);
             Console.Write(" ========Game Over======== ");
             Console.SetCursorPosition(50, 11);
             Console.WriteLine("Press 'Enter' to Play Again");
+            Console.SetCursorPosition(50, 12);
+            Console.WriteLine("Press any key to quit the game");
             Console.ForegroundColor = game_over;
-            Console.ReadKey();
 
+        }
+
+        public void GoodBye()
+        {
+            //Added Good bye Screen
+            Console.Clear();
+            ConsoleColor good_bye = Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(50, 10);
+            Console.Write(" ========Thanks for Playing======== ");
+            Console.SetCursorPosition(50, 11);
+            Console.WriteLine("Press any key to exit");
+            Console.ForegroundColor = good_bye;
+        }
+
+        static void Main(string[] args)
+        {
+            Program myGame = new Program(); 
+            // start game
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            do
+            {
+                myGame.Run();
+                myGame.GameOver();
+
+            } while (Console.ReadKey().Key == ConsoleKey.Enter);
+
+            if (Console.ReadKey().Key != ConsoleKey.Enter)
+            {
+                myGame.GoodBye();
+            }
         }
     }
 
