@@ -205,7 +205,7 @@ namespace SnakeGame
 
         public void GoodBye()
         {
-            //Added Good bye Screen
+            //Added Good bye Screen: Lee Zhe Sheng
             Console.Clear();
             ConsoleColor good_bye = Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(50, 10);
