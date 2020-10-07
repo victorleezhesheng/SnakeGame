@@ -196,9 +196,9 @@ namespace SnakeGame
             Console.SetCursorPosition(50, 10);
             Console.Write(" ========Game Over======== ");
             Console.SetCursorPosition(50, 11);
-            Console.WriteLine("Press 'Enter' to Play Again");
-            Console.SetCursorPosition(50, 12);
-            Console.WriteLine("Press any key to quit the game");
+            Console.WriteLine("Press any key to Play Again");
+            Console.SetCursorPosition(47, 12);
+            Console.WriteLine("Press 'Enter' key to quit the game");
             Console.ForegroundColor = game_over;
 
         }
@@ -209,9 +209,10 @@ namespace SnakeGame
             Console.Clear();
             ConsoleColor good_bye = Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(50, 10);
-            Console.Write(" ========Thanks for Playing======== ");
-            Console.SetCursorPosition(50, 11);
+            Console.Write(" ======Thanks for Playing====== ");
+            Console.SetCursorPosition(55, 11);
             Console.WriteLine("Press any key to exit");
+            Console.ReadKey();            
             Console.ForegroundColor = good_bye;
         }
 
@@ -226,12 +227,13 @@ namespace SnakeGame
                 myGame.Run();
                 myGame.GameOver();
 
-            } while (Console.ReadKey().Key == ConsoleKey.Enter);
+                
 
-            if (Console.ReadKey().Key != ConsoleKey.Enter)
-            {
-                myGame.GoodBye();
-            }
+            } while (Console.ReadKey().Key != ConsoleKey.Enter);
+
+            myGame.GoodBye();
+
+            
         }
     }
 
