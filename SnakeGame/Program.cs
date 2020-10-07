@@ -49,6 +49,7 @@ namespace SnakeGame
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
 
+
             Random rand = new Random(); //inputs random numbers
 
             // clear to color
@@ -81,7 +82,23 @@ namespace SnakeGame
                 Console.Write("#");
             }
 
-            
+            Queue<Index> snake = new Queue<Index>();
+            for (int i = 0; i <= 3; i++)
+            {
+                snake.Enqueue(new Index(0, i));
+            }
+
+            //Spawn food
+            Index food;
+            do
+            {
+                food = new Index(rand.Next(0, consoleHeightLimit),
+                    rand.Next(0, consoleWidthLimit));
+            }
+            while (snake.Contains(food) || obstacles.Contains(food));
+            Console.SetCursorPosition(food.indexx, food.indexy);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("@");
 
 
 
