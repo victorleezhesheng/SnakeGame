@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace SnakeGame
 {
     //Position of food : Jonathan
-    struct Index
+    class Index
     {
         public int indexx;
         public int indexy;
