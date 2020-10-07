@@ -87,14 +87,14 @@ namespace SnakeGame
             }
 
             //Spawn food
-            Index food;
+             Index point;
             do
             {
-                food = new Index(rand.Next(0, consoleHeightLimit),
+                point = new Index(rand.Next(0, consoleHeightLimit),
                     rand.Next(0, consoleWidthLimit));
-            }
-            while (snake.Contains(food) || obstacles.Contains(food));
-            Console.SetCursorPosition(food.indexx, food.indexy);
+            }while (snake.Contains(point));
+            
+            Console.SetCursorPosition(point.indexx, point.indexy);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("@");
 
