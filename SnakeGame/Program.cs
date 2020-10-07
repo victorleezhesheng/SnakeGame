@@ -36,8 +36,8 @@ namespace SnakeGame
     {
         public void Run()
         {
-            // display this char on the console during the game
-            char ch = '*';
+            // display this string on the console during the game
+            string ch = "***";// Added snake length : Lewis Chin
             bool gameLive = true;
             ConsoleKeyInfo consoleKey; // holds whatever key is pressed
 
@@ -161,7 +161,7 @@ namespace SnakeGame
                 // find the current position in the console grid & erase the character there if don't want to see the trail
                 Console.SetCursorPosition(x, y);
                 if (trail == false)
-                    Console.Write(' ');
+                    Console.Write("   "); // Added trail space : Lewis Chin
 
                 // calculate the new position
                 // note x set to 0 because we use the whole width, but y set to 1 because we use top row for instructions
