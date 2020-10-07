@@ -79,7 +79,7 @@ namespace SnakeGame
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.SetCursorPosition(obstacle.indexx, obstacle.indexy);
-                Console.Write("#");
+                Console.Write("||");
             }
 
             Queue<Index> snake = new Queue<Index>();
