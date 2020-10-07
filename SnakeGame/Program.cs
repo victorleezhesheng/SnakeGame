@@ -1,7 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SnakeGame
 {
+    //Position of food : Jonathan
+    struct Index
+    {
+        public int indexx;
+        public int indexy;
+        public Index(int Indexy, int Indexx)
+        {
+            indexx = Indexx;
+            indexy = Indexy;
+        }
+
+        public int IndexY
+        {
+            get { return indexy; }
+            set { indexy = value; }
+
+        }
+
+        public int IndexX
+        {
+            get { return indexy; }
+            set { indexy = value; }
+
+        }
+
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -21,8 +49,10 @@ namespace SnakeGame
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
 
+            Random rand = new Random(); //inputs random numbers
+
             // clear to color
-            Console.BackgroundColor = ConsoleColor.DarkGray;
+             Console.BackgroundColor = ConsoleColor.Black; //the background of the colour
             Console.Clear();
 
             // delay to slow down the character movement so you can see it
@@ -30,6 +60,11 @@ namespace SnakeGame
 
             // whether to keep trails
             bool trail = false;
+
+            
+
+
+
 
             do // until escape
             {
@@ -41,6 +76,14 @@ namespace SnakeGame
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
+
+                 //Added a score board: Jonathan
+                ConsoleColor score = Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.SetCursorPosition(100, 0);
+                Console.Write("Score: 0");
+                Console.ForegroundColor = score;
+                //
+
 
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
