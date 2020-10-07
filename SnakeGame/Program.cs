@@ -80,23 +80,16 @@ namespace SnakeGame
                 Console.Write("||");
             }
 
-            Queue<Index> snake = new Queue<Index>();
-            for (int i = 0; i <= 3; i++)
-            {
-                snake.Enqueue(new Index(0, i));
-            }
-
             //Spawn food
-             Index point;
-            do
-            {
-                point = new Index(rand.Next(0, consoleHeightLimit),
-                    rand.Next(0, consoleWidthLimit));
-            }while (snake.Contains(point));
+            Index point;
             
-            Console.SetCursorPosition(point.indexx, point.indexy);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("@");
+                point = new Index(rand.Next(0, consoleHeightLimit),
+                rand.Next(0, consoleWidthLimit));
+
+
+                Console.SetCursorPosition(point.indexx, point.indexy);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("@");
 
 
             do // until escape
