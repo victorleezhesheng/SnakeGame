@@ -121,6 +121,12 @@ namespace SnakeGame
                 Console.ForegroundColor = score;
                 //
 
+                //Added achievement score: Lee Zhe Sheng 
+                ConsoleColor a_score = Console.ForegroundColor = ConsoleColor.Green;
+                Console.SetCursorPosition(50, 0);
+                Console.Write("Achievement Score: 50");
+                Console.ForegroundColor = a_score;
+
 
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
@@ -183,6 +189,9 @@ namespace SnakeGame
                 System.Threading.Thread.Sleep(delayInMillisecs);
 
             } while (gameLive);
+
+            
+
         }
     }
 

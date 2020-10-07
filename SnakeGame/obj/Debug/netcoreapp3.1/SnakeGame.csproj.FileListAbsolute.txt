@@ -37,3 +37,16 @@ C:\Users\user\Source\Repos\victorleezhesheng\SnakeGame\SnakeGame\bin\Debug\netco
 C:\Users\user\Source\Repos\victorleezhesheng\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
 C:\Users\user\Source\Repos\victorleezhesheng\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
 C:\Users\user\Source\Repos\victorleezhesheng\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\lawlm\Desktop\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
