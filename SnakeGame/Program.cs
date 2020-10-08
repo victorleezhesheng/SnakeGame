@@ -180,7 +180,7 @@ namespace SnakeGame
                 }//Added 1 length: Lewis Chin
                 if (ch > obstacle)
                 {
-                    GameOver();
+                    myGame.GameOver();
                 }//Added 1 life: Lewis Chin
 
                 // pause to allow eyeballs to keep up
