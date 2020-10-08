@@ -173,6 +173,15 @@ namespace SnakeGame
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
+                
+                if (point == true)
+                {
+                    	ch++;
+                }//Added 1 length: Lewis Chin
+                if (ch > obstacle)
+                {
+                    GameOver();
+                }//Added 1 life: Lewis Chin
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
