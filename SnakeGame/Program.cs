@@ -26,11 +26,26 @@ namespace SnakeGame
         {
             get { return indexy; }
             set { indexy = value; }
-
         }
 
     }
 
+    //Achievement Score: Lee Zhe Sheng
+    class Achievement_Score
+    {
+        public int ascore;
+
+        public Achievement_Score(int Ascore)
+        {
+            ascore = Ascore;
+        }
+
+        public int AScore
+        {
+            get { return ascore; }
+            set { ascore = value; }
+        }
+    }
 
     class Program
     {
