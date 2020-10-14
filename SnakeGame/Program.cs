@@ -112,7 +112,7 @@ namespace SnakeGame
                 // print directions at top, then restore position
                 // save then restore current color
                 ConsoleColor cc = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                 Console.SetCursorPosition(x, y);
@@ -127,7 +127,7 @@ namespace SnakeGame
 
                 //Added achievement score: Lee Zhe Sheng 
                 ConsoleColor a_score = Console.ForegroundColor = ConsoleColor.Green;
-                Console.SetCursorPosition(50, 0);
+                Console.SetCursorPosition(75, 0);
                 Console.Write("Achievement Score: 50");
                 Console.ForegroundColor = a_score;
 
@@ -163,6 +163,9 @@ namespace SnakeGame
                         case ConsoleKey.Escape: //END
                             gameLive = false;
                             break;
+                        case ConsoleKey.P: //Pause: Lee Zhe Sheng
+                            Pause();                            
+                            break;
                     }
                 }
 
@@ -188,20 +191,35 @@ namespace SnakeGame
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
-                
-                if (point == true)
-                {
-                    	ch++;
-                }//Added 1 length: Lewis Chin
-                if (ch > obstacle)
-                {
-                    myGame.GameOver();
-                }//Added 1 life: Lewis Chin
+
+
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
 
             } while (gameLive);
+
+        }
+
+
+
+        // Puase function: Lee Zhe Sheng
+        public void Pause()
+        {
+            string p = "Game has been paused, press any key to continue";
+            
+            ConsoleColor message_c = Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.SetCursorPosition(40, 10);
+            Console.WriteLine("{0}", p);
+            Console.ForegroundColor = message_c;
+
+            Console.ReadKey(true);
+
+            ConsoleColor after_message = Console.ForegroundColor = ConsoleColor.Black;
+            Console.SetCursorPosition(40, 10);
+            Console.WriteLine("{0}", p);
+            Console.ForegroundColor = after_message;
+
 
         }
 
@@ -243,8 +261,6 @@ namespace SnakeGame
             {
                 myGame.Run();
                 myGame.GameOver();
-
-                
 
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
