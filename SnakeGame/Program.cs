@@ -192,7 +192,8 @@ namespace SnakeGame
                     if (x == obstacle.indexx && y == obstacle.indexy)
                     {
 
-                        GoodBye();
+                        gameLive = false;
+
                     }
 
                 }
