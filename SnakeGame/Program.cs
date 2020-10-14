@@ -53,6 +53,7 @@ namespace SnakeGame
         {
             // display this string on the console during the game
             string ch = "***";// Added snake length : Lewis Chin
+            string space = "    ";
             bool gameLive = true;
             ConsoleKeyInfo consoleKey; // holds whatever key is pressed
 
@@ -61,7 +62,8 @@ namespace SnakeGame
             int dx = 1, dy = 0;
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
-
+            string food = "@";
+            string obs = "||";
 
             Random rand = new Random(); //inputs random numbers
 
@@ -74,6 +76,10 @@ namespace SnakeGame
 
             // whether to keep trails
             bool trail = false;
+
+            int scores = 0;
+            //
+
 
             //Location to spawn obstacle : Jonathan
             List<Index> obstacles = new List<Index>() {
@@ -92,19 +98,24 @@ namespace SnakeGame
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.SetCursorPosition(obstacle.indexx, obstacle.indexy);
-                Console.Write("||");
+                Console.Write(obs);
             }
 
             //Spawn food : Jonathan
-            Index point;
-            
-                point = new Index(rand.Next(0, consoleHeightLimit),
-                rand.Next(0, consoleWidthLimit));
+            List<Index> point = new List<Index>()
+            {
+                new Index(rand.Next( 1,20),rand.Next (34,70)),
+            };
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(food);
 
-                Console.SetCursorPosition(point.indexx, point.indexy);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("@");
+            foreach (Index points in point)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(points.indexx, points.indexy);
+                Console.Write(food);
+            }
 
 
             do // until escape
@@ -112,22 +123,21 @@ namespace SnakeGame
                 // print directions at top, then restore position
                 // save then restore current color
                 ConsoleColor cc = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
 
-                //Added a score board: Jonathan
                 ConsoleColor score = Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.SetCursorPosition(100, 0);
-                Console.Write("Score: 0");
+                Console.Write("Score: " + scores);
                 Console.ForegroundColor = score;
-                //
+
 
                 //Added achievement score: Lee Zhe Sheng 
                 ConsoleColor a_score = Console.ForegroundColor = ConsoleColor.Green;
-                Console.SetCursorPosition(75, 0);
+                Console.SetCursorPosition(50, 0);
                 Console.Write("Achievement Score: 50");
                 Console.ForegroundColor = a_score;
 
@@ -163,16 +173,27 @@ namespace SnakeGame
                         case ConsoleKey.Escape: //END
                             gameLive = false;
                             break;
-                        case ConsoleKey.P: //Pause: Lee Zhe Sheng
-                            Pause();                            
-                            break;
                     }
                 }
+
+                foreach (Index points in point)
+                {
+                    if (x == points.indexx && y == points.indexy)
+                    {
+                        space += " ";
+                        ch += "*";
+                        scores += 1;
+                    }
+                }
+
+
+      
+
 
                 // find the current position in the console grid & erase the character there if don't want to see the trail
                 Console.SetCursorPosition(x, y);
                 if (trail == false)
-                    Console.Write("   "); // Added trail space : Lewis Chin
+                    Console.Write(space); // Added trail space : Lewis Chin
 
                 // calculate the new position
                 // note x set to 0 because we use the whole width, but y set to 1 because we use top row for instructions
@@ -191,35 +212,13 @@ namespace SnakeGame
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
-
-
+                
+              
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
 
             } while (gameLive);
-
-        }
-
-
-
-        // Puase function: Lee Zhe Sheng
-        public void Pause()
-        {
-            string p = "Game has been paused, press any key to continue";
-            
-            ConsoleColor message_c = Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.SetCursorPosition(0, 1);
-            Console.WriteLine("{0}", p);
-            Console.ForegroundColor = message_c;
-
-            Console.ReadKey(true);
-
-            ConsoleColor after_message = Console.ForegroundColor = ConsoleColor.Black;
-            Console.SetCursorPosition(0, 1);
-            Console.WriteLine("{0}", p);
-            Console.ForegroundColor = after_message;
-
 
         }
 
@@ -261,6 +260,8 @@ namespace SnakeGame
             {
                 myGame.Run();
                 myGame.GameOver();
+
+                
 
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
