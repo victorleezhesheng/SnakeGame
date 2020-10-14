@@ -209,14 +209,14 @@ namespace SnakeGame
             string p = "Game has been paused, press any key to continue";
             
             ConsoleColor message_c = Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.SetCursorPosition(40, 10);
+            Console.SetCursorPosition(0, 1);
             Console.WriteLine("{0}", p);
             Console.ForegroundColor = message_c;
 
             Console.ReadKey(true);
 
             ConsoleColor after_message = Console.ForegroundColor = ConsoleColor.Black;
-            Console.SetCursorPosition(40, 10);
+            Console.SetCursorPosition(0, 1);
             Console.WriteLine("{0}", p);
             Console.ForegroundColor = after_message;
 
