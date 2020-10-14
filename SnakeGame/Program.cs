@@ -187,7 +187,17 @@ namespace SnakeGame
                 }
 
 
-      
+                foreach (Index obstacle in obstacles)
+                {
+                    if (x == obstacle.indexx && y == obstacle.indexy)
+                    {
+
+                        GoodBye();
+                    }
+
+                }
+
+                Console.Write(food);
 
 
                 // find the current position in the console grid & erase the character there if don't want to see the trail
