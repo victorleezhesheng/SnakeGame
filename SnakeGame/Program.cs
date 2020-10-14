@@ -191,7 +191,7 @@ namespace SnakeGame
                 {
                     if (x == obstacle.indexx && y == obstacle.indexy)
                     {
-
+                        //bug fixed: Lee Zhe Sheng
                         gameLive = false;
 
                     }
