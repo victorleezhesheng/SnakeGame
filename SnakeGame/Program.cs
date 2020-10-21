@@ -221,8 +221,7 @@ namespace SnakeGame
                     y = consoleHeightLimit;
 
                 // write the character in the new position
-                Console.SetCursorPosition(x, y);
-                Console.Write(ch);
+                Protag(x, y, ch);
                 
               
 
@@ -231,6 +230,11 @@ namespace SnakeGame
 
             } while (gameLive);
 
+        }
+        public void Protag(int x, int y, string ch)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(ch);
         }
 
         public void GameOver()
