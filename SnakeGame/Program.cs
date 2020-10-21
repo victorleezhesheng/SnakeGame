@@ -231,7 +231,8 @@ namespace SnakeGame
             } while (gameLive);
 
         }
-        public void Protag(int x, int y, string ch)
+        
+        public void Protag(int x, int y, string ch)// Added character in a function : Lewis Chin
         {
             Console.SetCursorPosition(x, y);
             Console.Write(ch);
