@@ -57,7 +57,7 @@ namespace SnakeGame
         public void Run()
         {
             // display this string on the console during the game
-            string ch = "*";// Added snake length : Lewis Chin
+            string ch = "*";
             bool gameLive = true;
             ConsoleKeyInfo consoleKey;
             // location info & display
@@ -68,6 +68,7 @@ namespace SnakeGame
             string obs = "|";
 
             Random rand = new Random(); //inputs random numbers
+            // Direction modification: Lewis Chin
             byte right = 0;
             byte left = 1;
             byte down = 2;
@@ -110,7 +111,7 @@ namespace SnakeGame
                 Console.SetCursorPosition(obstacle.indexx, obstacle.indexy);
                 Console.Write(obs);
             }
-
+            // Merge food and snake elements : Lewis Chin
             Queue<Index> elements = new Queue<Index>();
             for (int i = 0; i <= 2; i++)
             {
@@ -128,10 +129,12 @@ namespace SnakeGame
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(food);
 
+            // Snake Character position : Lewis Chin
+
             foreach (Index position in elements)
             {
                 Console.SetCursorPosition(position.indexx, position.indexy);
-                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(ch);
             }
 
@@ -164,7 +167,7 @@ namespace SnakeGame
 
                 // see if a key has been pressed
 
-
+                // Direction modification : Lewis Chin
                 if (Console.KeyAvailable)
                 {
                     // get key and use it to set options
@@ -193,10 +196,10 @@ namespace SnakeGame
                             break;
                     }
                 }
-
+                // Snake Head Direction : Lewis Chin
                 Index snakeHead = elements.Last();
                 Index nextDirection = directions[direction];
-
+                
                 Index snakeNewHead = new Index(snakeHead.indexy + nextDirection.indexy,
                     snakeHead.indexx + nextDirection.indexx);
 
@@ -216,7 +219,7 @@ namespace SnakeGame
                 if (direction == left) Console.Write(ch);
                 if (direction == up) Console.Write(ch);
                 if (direction == down) Console.Write(ch);
-
+                // Snake length growth : Lewis Chin
                 if (snakeNewHead.indexx == fruit.indexx && snakeNewHead.indexy == fruit.indexy)
                 {
                     do
@@ -232,7 +235,7 @@ namespace SnakeGame
                 }
                 else
                 {
-                    // moving...
+                    // Added space : Lewis Chin
                     Index last = elements.Dequeue();
                     Console.SetCursorPosition(last.indexx, last.indexy);
                     Console.Write(" ");
