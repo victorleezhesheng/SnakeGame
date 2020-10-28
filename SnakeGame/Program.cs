@@ -246,7 +246,7 @@ namespace SnakeGame
                     {
                         //bug fixed: Lee Zhe Sheng
                         StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
-                        sw.WriteLine("Score: " + scores.ToString() + " Timer: " + Timer.ToString(),"\n");
+                        sw.WriteLine("Score: " + scores.ToString(), "\n");
                         sw.Close();
                         gameLive = false;
                         GameOver();
