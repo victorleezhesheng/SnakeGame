@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Threading;
+using System.IO;
 
 namespace SnakeGame
 {
@@ -137,10 +138,8 @@ namespace SnakeGame
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(ch);
             }
-
             do // until escape
             {
-                
 
                 // print directions at top, then restore position
                 // save then restore current color
@@ -246,6 +245,9 @@ namespace SnakeGame
                     if (snakeNewHead.indexx == obstacle.indexx && snakeNewHead.indexy == obstacle.indexy)
                     {
                         //bug fixed: Lee Zhe Sheng
+                        StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
+                        sw.WriteLine("Score: " + scores.ToString() + " Timer: " + Timer.ToString(),"\n");
+                        sw.Close();
                         gameLive = false;
                         GameOver();
                     }
@@ -279,7 +281,17 @@ namespace SnakeGame
             Console.SetCursorPosition(47, 12);
             Console.WriteLine("Press 'Enter' key to quit the game");
             Console.ForegroundColor = game_over;
+            //Gameover score 
+            using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
+            {
+                string ln;
+                while ((ln = file.ReadLine()) != null)
+                {
+                    Console.SetCursorPosition(47, 13);
+                    Console.WriteLine(ln);
 
+                }
+            }
         }
 
         public void GoodBye()
@@ -301,8 +313,20 @@ namespace SnakeGame
             // start game
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
+
+            //Show all scoreboard
+            using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
+            {
+                string ln;
+                while ((ln = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(ln);
+                }
+            }
+
             do
             {
+                
                 myGame.Run();
                 myGame.GameOver();
 

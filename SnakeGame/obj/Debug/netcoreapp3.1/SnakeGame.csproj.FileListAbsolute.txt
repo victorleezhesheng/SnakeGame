@@ -63,3 +63,35 @@ C:\Users\lawlm\Desktop\Y2S2\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGa
 C:\Users\lawlm\Desktop\Y2S2\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
 C:\Users\lawlm\Desktop\Y2S2\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
 C:\Users\lawlm\Desktop\Y2S2\DP1\Week by week\Week 4\Activities\SnakeGame\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMPLauncher.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMLSS.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMPLib.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.MediaPlayer.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMPDXMLib.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPLauncher.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMLSS.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.MediaPlayer.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPDXMLib.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.ResolveComReference.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CopyComplete
