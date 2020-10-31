@@ -138,9 +138,14 @@ namespace SnakeGame
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(ch);
             }
+            int Timer = 0; //Timer : Jonathan Lee
             do // until escape
             {
-
+                ConsoleColor time = Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.SetCursorPosition(80, 0);
+                Console.Write("Timer: " + Timer);
+                Console.ForegroundColor = time;
+                Timer++;
                 // print directions at top, then restore position
                 // save then restore current color
                 ConsoleColor cc = Console.ForegroundColor;
@@ -246,7 +251,7 @@ namespace SnakeGame
                     {
                         //bug fixed: Lee Zhe Sheng
                         StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
-                        sw.WriteLine("Score: " + scores.ToString(), "\n");
+                        sw.WriteLine("Score: " + scores.ToString() + " Timer: " + Timer.ToString(), "\n");
                         sw.Close();
                         gameLive = false;
                         GameOver();
