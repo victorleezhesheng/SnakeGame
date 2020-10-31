@@ -1,10 +1,2 @@
 Score: 1 Timer: 158
-Score: 0 Timer: 82
-Score: 1 Timer: 80
-Score: 0 Timer: 26
-Score: 0 Timer: 21
-Score: 1 Timer: 54
-Score: 0 Timer: 88
-Score: 1 Timer: 101
-Score: 0
-Score: 1
+Score: 5 Timer: 246
