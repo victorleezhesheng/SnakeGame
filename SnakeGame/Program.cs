@@ -145,6 +145,7 @@ namespace SnakeGame
             int Timer = 0; //Timer : Jonathan Lee
             do // until escape
             {
+                //Display Timer: Jonathan Lee 
                 ConsoleColor time = Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.SetCursorPosition(80, 0);
                 Console.Write("Timer: " + Timer);
@@ -258,6 +259,7 @@ namespace SnakeGame
                     if (snakeNewHead.indexx == obstacle.indexx && snakeNewHead.indexy == obstacle.indexy)
                     {
                         //bug fixed: Lee Zhe Sheng
+                        //Game End Score: Jonathan Lee
                         StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
                         sw.WriteLine("Score: " + scores.ToString() + " Timer: " + Timer.ToString(), "\n");
                         sw.Close();
@@ -298,7 +300,7 @@ namespace SnakeGame
             Console.SetCursorPosition(47, 12);
             Console.WriteLine("Press 'Enter' key to quit the game");
             Console.ForegroundColor = game_over;
-            //Gameover score 
+            //Gameover score : Jonathan Lee
             using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
             {
                 string ln;
@@ -331,7 +333,7 @@ namespace SnakeGame
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
 
-            //Show all scoreboard
+            //Show all scoreboard : Jonathan Lee
             using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
             {
                 string ln;
