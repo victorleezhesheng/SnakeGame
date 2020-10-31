@@ -57,6 +57,10 @@ namespace SnakeGame
     {
         public void Run()
         {
+            //Background Music : Jonathan Lee
+            System.Media.SoundPlayer BGM = new System.Media.SoundPlayer();
+            BGM.SoundLocation = "../../../Music/BGM.wav";
+            BGM.Play();
             // display this string on the console during the game
             string ch = "*";
             bool gameLive = true;
@@ -226,6 +230,10 @@ namespace SnakeGame
                 // Snake length growth : Lewis Chin
                 if (snakeNewHead.indexx == fruit.indexx && snakeNewHead.indexy == fruit.indexy)
                 {
+                    //Eat Sound : Jonathan Lee
+                    System.Media.SoundPlayer Eat = new System.Media.SoundPlayer();
+                    Eat.SoundLocation = "../../../Music/Hit.wav";
+                    Eat.Play();
                     do
                     {
                         fruit = new Index(rand.Next(0, consoleHeightLimit),
@@ -278,6 +286,10 @@ namespace SnakeGame
         {
             // Added Game Over Screen: Lee Zhe Sheng
             Console.Clear();
+            //GameOver BGM : Jonathan Lee
+            System.Media.SoundPlayer GameOver = new System.Media.SoundPlayer();
+            GameOver.SoundLocation = "../../../Music/GameOver.wav";
+            GameOver.Play();
             ConsoleColor game_over = Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(50, 10);
             Console.Write(" ========Game Over======== ");
