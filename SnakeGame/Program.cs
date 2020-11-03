@@ -55,7 +55,7 @@ namespace SnakeGame
 
     class Program
     {
-        public void Run()
+        public static void Run()
         {
             //Background Music : Jonathan Lee
             System.Media.SoundPlayer BGM = new System.Media.SoundPlayer();
@@ -284,7 +284,7 @@ namespace SnakeGame
         }
 
 
-        public void GameOver()
+        public static void GameOver()
         {
             // Added Game Over Screen: Lee Zhe Sheng
             Console.Clear();
@@ -313,7 +313,7 @@ namespace SnakeGame
             }
         }
 
-        public void GoodBye()
+        public static void GoodBye()
         {
             //Added Good bye Screen: Lee Zhe Sheng
             Console.Clear();
@@ -326,13 +326,43 @@ namespace SnakeGame
             Console.ForegroundColor = good_bye;
         }
 
-        static void Main(string[] args)
+        public static void menu()
         {
-            Program myGame = new Program();
-            // start game
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Choose an option: ");
+            Console.WriteLine("1. Start a new game the game");
+            Console.WriteLine("2. View the scoreboard");
+            Console.WriteLine("3. Exit the game");
+            Console.WriteLine("\r\nSelect an option: ");
 
+            switch(Console.ReadLine())
+            {
+                case "1":
+                    do
+                    {
+                        Run();
+                        GameOver();
+                    } while (Console.ReadKey().Key != ConsoleKey.Enter);
+                    GoodBye();
+                    break;
+                case "2":
+                    scoreboard();
+                    break;
+                case "3":
+                    break;
+
+
+
+
+
+
+            }
+
+        }
+
+        public static void scoreboard()
+        {
+            Console.Clear();
             //Show all scoreboard : Jonathan Lee
             using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
             {
@@ -342,18 +372,23 @@ namespace SnakeGame
                     Console.WriteLine(ln);
                 }
             }
+            Console.WriteLine("Press any key to back to main menu");
+            Console.ReadKey();
+            menu();
+        }
 
-            do
-            {
-                
-                myGame.Run();
-                myGame.GameOver();
+        static void Main(string[] args)
+        {
+            // start game
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            menu();
 
+            
 
+            
 
-            } while (Console.ReadKey().Key != ConsoleKey.Enter);
-
-            myGame.GoodBye();
+            
 
 
         }
