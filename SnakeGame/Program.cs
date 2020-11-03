@@ -349,6 +349,10 @@ namespace SnakeGame
                     scoreboard();
                     break;
                 case "3":
+                    GoodBye();
+                    break;
+                default:
+                    menu();
                     break;
 
 
