@@ -107,7 +107,9 @@ namespace SnakeGame
             int consoleHeightLimit = 24;
             string food = "@";
             string obs = "|";
-
+            int lastFoodTime = 0;
+            int foodDissapearTime = 10000;
+            lastFoodTime = Environment.TickCount;
             Random rand = new Random(); //inputs random numbers
             // Direction modification: Lewis Chin
             byte right = 0;
@@ -277,6 +279,7 @@ namespace SnakeGame
                             rand.Next(0, consoleWidthLimit));
                     }
                     while (elements.Contains(fruit) || obstacles.Contains(fruit));
+                    lastFoodTime = Environment.TickCount;
                     Console.SetCursorPosition(fruit.indexx, fruit.indexy);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(food);
@@ -290,6 +293,22 @@ namespace SnakeGame
                     Console.SetCursorPosition(last.indexx, last.indexy);
                     Console.Write(" ");
                 }
+                // Food appears every 10 seconds at different positions: Lewis Chin
+                if (Environment.TickCount - lastFoodTime >= foodDissapearTime)
+                {
+                    Console.SetCursorPosition(fruit.indexx, fruit.indexy);
+                    Console.Write(" ");
+                    do
+                    {
+                        fruit = new Index(rand.Next(0, consoleHeightLimit),rand.Next(0, consoleWidthLimit));
+                    }
+                    while (elements.Contains(fruit) || obstacles.Contains(fruit));
+                    lastFoodTime = Environment.TickCount;
+                }
+                Console.SetCursorPosition(fruit.indexx, fruit.indexy);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(food);
+
 
                 foreach (Index obstacle in obstacles)
                 {
