@@ -57,10 +57,8 @@ namespace SnakeGame
     {
         public static void Run()
         {
-            //Background Music : Jonathan Lee
-            System.Media.SoundPlayer BGM = new System.Media.SoundPlayer();
-            BGM.SoundLocation = "../../../Music/BGM.wav";
-            BGM.Play();
+            BGM();
+            
             // display this string on the console during the game
             string ch = "*";
             bool gameLive = true;
@@ -70,7 +68,7 @@ namespace SnakeGame
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
             string food = "@";
-            string obs = "|";
+            string obs = "||";
 
             Random rand = new Random(); //inputs random numbers
             // Direction modification: Lewis Chin
@@ -245,6 +243,7 @@ namespace SnakeGame
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(food);
                     scores += 1;
+
                 }
                 else
                 {
@@ -281,6 +280,14 @@ namespace SnakeGame
 
             } while (gameLive);
 
+        }
+
+        public static void BGM()
+        {
+            //Background Music : Jonathan Lee
+            System.Media.SoundPlayer BGM = new System.Media.SoundPlayer();
+            BGM.SoundLocation = "../../../Music/BGM.wav";
+            BGM.Play();
         }
 
 
@@ -354,12 +361,6 @@ namespace SnakeGame
                 default:
                     menu();
                     break;
-
-
-
-
-
-
             }
 
         }
@@ -384,8 +385,6 @@ namespace SnakeGame
         static void Main(string[] args)
         {
             // start game
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
             menu();
 
             
