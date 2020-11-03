@@ -68,7 +68,7 @@ namespace SnakeGame
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
             string food = "@";
-            string obs = "||";
+            string obs = "|";
 
             Random rand = new Random(); //inputs random numbers
             // Direction modification: Lewis Chin
