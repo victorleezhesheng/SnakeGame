@@ -35,6 +35,43 @@ namespace SnakeGame
 
     }
 
+    class ScoreName //ScoreName : Jonathan lee 
+    {
+        public string name;
+        public ScoreName(string names)
+        {
+            name = names;
+        }
+
+        public ScoreName() : this("")
+        {
+
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+
+        }
+
+        public void View()
+        {
+
+            //Added Enter Name screen: Jonathan Lee
+            Console.Clear();
+            ConsoleColor InsertName = Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(40, 10);
+            Console.Write(" ======Please Enter Your Name====== ");
+            Console.SetCursorPosition(40, 11);
+            Console.Write("Name: ");
+            Name = Console.ReadLine();
+            Console.ForegroundColor = InsertName;
+
+        }
+
+    }
+
     //Achievement Score: Lee Zhe Sheng
     class Achievement_Score
     {
@@ -57,8 +94,9 @@ namespace SnakeGame
     {
         public static void Run()
         {
+            ScoreName scorename = new ScoreName();
+            scorename.View();
             BGM();
-            
             // display this string on the console during the game
             string ch = "*";
             bool gameLive = true;
@@ -260,7 +298,7 @@ namespace SnakeGame
                         //bug fixed: Lee Zhe Sheng
                         //Game End Score: Jonathan Lee
                         StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
-                        sw.WriteLine("Score: " + scores.ToString() + " Timer: " + Timer.ToString(), "\n");
+                        sw.WriteLine("Name: " + scorename.Name + " [Score: " + scores.ToString() + " Timer: " + Timer.ToString()+"]", "\n");
                         sw.Close();
                         gameLive = false;
                         GameOver();
