@@ -302,6 +302,7 @@ namespace SnakeGame
 
                 }
 
+                //Special food spawn
                 if (snakeNewHead.indexx == sfruit.indexx && snakeNewHead.indexy == sfruit.indexy)
                 {
                     //Eat Sound : Jonathan Lee
@@ -329,7 +330,9 @@ namespace SnakeGame
                     Console.SetCursorPosition(last.indexx, last.indexy);
                     Console.Write(" ");
                 }
+
                 // Food appears every 10 seconds at different positions: Lewis Chin
+                //Updated by Lee Zhe Sheng
                 if (Environment.TickCount - lastsFoodTime >= foodDissapearTime)
                 {
                     Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
