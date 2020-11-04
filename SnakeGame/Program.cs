@@ -105,15 +105,14 @@ namespace SnakeGame
             int x = 0, y = 2; // y is 2 to allow the top row for directions & space
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
-            string food = "$";
-            string sfood = "@";
+            string food = "@";
+            string sfood = "$";
             int lastsFoodTime = 0;
-            int sfoodDissapearTime = 10000;
 
             string obs = "|";
             int lastFoodTime = 0;
             int foodDissapearTime = 10000;
-            lastFoodTime = Environment.TickCount;
+            lastsFoodTime = Environment.TickCount;
             Random rand = new Random(); //inputs random numbers
             // Direction modification: Lewis Chin
             byte right = 0;
@@ -331,20 +330,20 @@ namespace SnakeGame
                     Console.Write(" ");
                 }
                 // Food appears every 10 seconds at different positions: Lewis Chin
-                if (Environment.TickCount - lastFoodTime >= foodDissapearTime)
+                if (Environment.TickCount - lastsFoodTime >= foodDissapearTime)
                 {
-                    Console.SetCursorPosition(fruit.indexx, fruit.indexy);
+                    Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
                     Console.Write(" ");
                     do
                     {
-                        fruit = new Index(rand.Next(0, consoleHeightLimit),rand.Next(0, consoleWidthLimit));
+                        sfruit = new Index(rand.Next(0, consoleHeightLimit),rand.Next(0, consoleWidthLimit));
                     }
-                    while (elements.Contains(fruit) || obstacles.Contains(fruit));
-                    lastFoodTime = Environment.TickCount;
+                    while (elements.Contains(sfruit) || obstacles.Contains(sfruit));
+                    lastsFoodTime = Environment.TickCount;
                 }
-                Console.SetCursorPosition(fruit.indexx, fruit.indexy);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(food);
+                Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(sfood);
 
 
                 foreach (Index obstacle in obstacles)
