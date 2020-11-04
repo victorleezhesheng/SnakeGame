@@ -105,7 +105,11 @@ namespace SnakeGame
             int x = 0, y = 2; // y is 2 to allow the top row for directions & space
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
-            string food = "@";
+            string food = "$";
+            string sfood = "@";
+            int lastsFoodTime = 0;
+            int sfoodDissapearTime = 10000;
+
             string obs = "|";
             int lastFoodTime = 0;
             int foodDissapearTime = 10000;
@@ -171,6 +175,18 @@ namespace SnakeGame
             Console.SetCursorPosition(fruit.indexx, fruit.indexy);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(food);
+
+            //Spawn special food : Lee Zhe Sheng
+            Index sfruit;
+            do
+            {
+                sfruit = new Index(rand.Next(0, consoleHeightLimit),
+                    rand.Next(0, consoleWidthLimit));
+            }
+            while (elements.Contains(sfruit) || obstacles.Contains(sfruit));
+            Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(sfood);
 
             // Snake Character position : Lewis Chin
 
@@ -286,6 +302,27 @@ namespace SnakeGame
                     scores += 1;
 
                 }
+
+                if (snakeNewHead.indexx == sfruit.indexx && snakeNewHead.indexy == sfruit.indexy)
+                {
+                    //Eat Sound : Jonathan Lee
+                    System.Media.SoundPlayer Eat = new System.Media.SoundPlayer();
+                    Eat.SoundLocation = "../../../Music/Hit.wav";
+                    Eat.Play();
+                    do
+                    {
+                        sfruit = new Index(rand.Next(0, consoleHeightLimit),
+                            rand.Next(0, consoleWidthLimit));
+                    }
+                    while (elements.Contains(sfruit) || obstacles.Contains(sfruit));
+                    lastFoodTime = Environment.TickCount;
+                    Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(sfood);
+                    scores += 10;
+
+                }
+
                 else
                 {
                     // Added space : Lewis Chin
