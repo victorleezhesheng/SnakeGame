@@ -416,7 +416,7 @@ namespace SnakeGame
             //Restructure : Lee Zhe Sheng
             Console.Clear();
             Console.WriteLine("Choose an option: ");
-            Console.WriteLine("1. Start a new game the game");
+            Console.WriteLine("1. Start a new game");
             Console.WriteLine("2. View the scoreboard");
             Console.WriteLine("3. Exit the game");
             Console.WriteLine("\r\nSelect an option: ");
