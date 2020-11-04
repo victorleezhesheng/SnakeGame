@@ -73,23 +73,6 @@ namespace SnakeGame
 
     }
 
-    //Achievement Score: Lee Zhe Sheng
-    class Achievement_Score
-    {
-        public int ascore;
-
-        public Achievement_Score(int Ascore)
-        {
-            ascore = Ascore;
-        }
-
-        public int AScore
-        {
-            get { return ascore; }
-            set { ascore = value; }
-        }
-    }
-
 
     class Program
     {
@@ -218,14 +201,6 @@ namespace SnakeGame
                 Console.SetCursorPosition(100, 0);
                 Console.Write("Score: " + scores);
                 Console.ForegroundColor = score;
-
-
-                /*Added achievement score: Lee Zhe Sheng 
-                ConsoleColor a_score = Console.ForegroundColor = ConsoleColor.Green;
-                Console.SetCursorPosition(50, 0);
-                Console.Write("Achievement Score: 50");
-                Console.ForegroundColor = a_score;*/
-
 
 
                 // see if a key has been pressed
