@@ -6,6 +6,7 @@ using System.Text;
 using System.Collections;
 using System.Threading;
 using System.IO;
+using WMPLib;
 
 namespace SnakeGame
 {
@@ -381,6 +382,7 @@ namespace SnakeGame
         public static void BGM()
         {
             //Background Music : Jonathan Lee
+            //Restructure : Lee Zhe Sheng
             System.Media.SoundPlayer BGM = new System.Media.SoundPlayer();
             BGM.SoundLocation = "../../../Music/BGM.wav";
             BGM.Play();
@@ -390,6 +392,7 @@ namespace SnakeGame
         public static void GameOver()
         {
             // Added Game Over Screen: Lee Zhe Sheng
+            //Restructure : Lee Zhe Sheng
             Console.Clear();
             //GameOver BGM : Jonathan Lee
             System.Media.SoundPlayer GameOver = new System.Media.SoundPlayer();
@@ -419,6 +422,7 @@ namespace SnakeGame
         public static void GoodBye()
         {
             //Added Good bye Screen: Lee Zhe Sheng
+            //Restructure : Lee Zhe Sheng
             Console.Clear();
             ConsoleColor good_bye = Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(50, 10);
@@ -429,8 +433,12 @@ namespace SnakeGame
             Console.ForegroundColor = good_bye;
         }
 
+
+        
         public static void menu()
         {
+            //Added main menu: Lee Zhe Sheng
+            //Restructure : Lee Zhe Sheng
             Console.Clear();
             Console.WriteLine("Choose an option: ");
             Console.WriteLine("1. Start a new game the game");
@@ -465,6 +473,7 @@ namespace SnakeGame
         {
             Console.Clear();
             //Show all scoreboard : Jonathan Lee
+            //Updated by : Lee Zhe Sheng
             using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
             {
                 string ln;
