@@ -262,8 +262,6 @@ namespace SnakeGame
                 }
                 
 
-                
-
                 elements.Enqueue(snakeNewHead);
                 Console.SetCursorPosition(snakeNewHead.indexx, snakeNewHead.indexy);
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -432,15 +430,20 @@ namespace SnakeGame
         public static void menu()
         {
             //Added main menu: Lee Zhe Sheng
-            //Restructure : Lee Zhe Sheng
+            //Restructure : Lee Zhe Sheng, Jonathan Lee
             Console.Clear();
+            Console.SetCursorPosition(50, 10);
             Console.WriteLine("Choose an option: ");
+            Console.SetCursorPosition(50, 11);
             Console.WriteLine("1. Start a new game");
+            Console.SetCursorPosition(50, 12);
             Console.WriteLine("2. View the scoreboard");
+            Console.SetCursorPosition(50, 13);
             Console.WriteLine("3. Exit the game");
-            Console.WriteLine("\r\nSelect an option: ");
-
-            switch(Console.ReadLine())
+            Console.SetCursorPosition(50, 14);
+            Console.WriteLine("Select an option: ");
+            Console.SetCursorPosition(67, 14);
+            switch (Console.ReadLine())
             {
                 case "1":
                     do
@@ -468,14 +471,20 @@ namespace SnakeGame
             Console.Clear();
             //Show all scoreboard : Jonathan Lee
             //Updated by : Lee Zhe Sheng
+            int x = 40;
+            int y = 11; 
             using (StreamReader file = new StreamReader("../../../ScoreBoard/ScoreBoard.txt"))
             {
+                Console.SetCursorPosition(40, 10);
                 string ln;
                 while ((ln = file.ReadLine()) != null)
                 {
+                    Console.SetCursorPosition(x, y);
                     Console.WriteLine(ln);
+                    y += 1;
                 }
             }
+            Console.SetCursorPosition(x, y);
             Console.WriteLine("Press any key to back to main menu");
             Console.ReadKey();
             menu();
