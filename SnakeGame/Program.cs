@@ -245,10 +245,24 @@ namespace SnakeGame
                 if (snakeNewHead.indexy < 0) snakeNewHead.indexy = consoleHeightLimit - 1;
                 if (snakeNewHead.indexy >= consoleHeightLimit) snakeNewHead.indexy = 0;
                 if (snakeNewHead.indexx >= consoleWidthLimit) snakeNewHead.indexx = 0;
+				// Game Over after snake eats itself : Lewis Chin
+                foreach (Index position in elements)
+                {
+                    if (snakeNewHead.indexx == position.indexx && snakeNewHead.indexy == position.indexy)
+                    {
+                        StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
+                        sw.WriteLine("Name: " + scorename.Name + " [Score: " + scores.ToString() + " Timer: " + Timer.ToString() + "]", "\n");
+                        sw.Close();
+                        gameLive = false;
+                        GameOver();
+                    }
+                    Console.SetCursorPosition(position.indexx, position.indexy);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(ch);
+                }
+                
 
-                Console.SetCursorPosition(snakeHead.indexx, snakeHead.indexy);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(ch);
+                
 
                 elements.Enqueue(snakeNewHead);
                 Console.SetCursorPosition(snakeNewHead.indexx, snakeNewHead.indexy);
@@ -257,6 +271,8 @@ namespace SnakeGame
                 if (direction == left) Console.Write(ch);
                 if (direction == up) Console.Write(ch);
                 if (direction == down) Console.Write(ch);
+
+
                 // Snake length growth : Lewis Chin
                 if (snakeNewHead.indexx == fruit.indexx && snakeNewHead.indexy == fruit.indexy)
                 {
@@ -278,6 +294,7 @@ namespace SnakeGame
 
                 }
 
+                
                 //Special food spawn
                 if (snakeNewHead.indexx == sfruit.indexx && snakeNewHead.indexy == sfruit.indexy)
                 {
@@ -325,6 +342,8 @@ namespace SnakeGame
                 Console.Write(sfood);
 
 
+                
+
                 foreach (Index obstacle in obstacles)
                 {
                     if (snakeNewHead.indexx == obstacle.indexx && snakeNewHead.indexy == obstacle.indexy)
@@ -332,7 +351,7 @@ namespace SnakeGame
                         //bug fixed: Lee Zhe Sheng
                         //Game End Score: Jonathan Lee
                         StreamWriter sw = File.AppendText("../../../ScoreBoard/ScoreBoard.txt");
-                        sw.WriteLine("Name: " + scorename.Name + " [Score: " + scores.ToString() + " Timer: " + Timer.ToString()+"]", "\n");
+                        sw.WriteLine("Name: " + scorename.Name + " [Score: " + scores.ToString() + " Timer: " + Timer.ToString() + "]", "\n");
                         sw.Close();
                         gameLive = false;
                         GameOver();
@@ -340,10 +359,10 @@ namespace SnakeGame
 
                 }
 
-
+                
 
                 // write the character in the new position
-                
+
                 // length add after eat: Lewis Chin
 
 
