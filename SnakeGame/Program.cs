@@ -180,7 +180,7 @@ namespace SnakeGame
                 Console.Write(ch);
             }
             int Timer = 0; //Timer : Jonathan Lee
-            do // until escape
+            do // until escape 
             {
                 //Display Timer: Jonathan Lee 
                 ConsoleColor time = Console.ForegroundColor = ConsoleColor.Yellow;
