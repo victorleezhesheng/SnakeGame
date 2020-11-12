@@ -124,14 +124,15 @@ namespace SnakeGame
 
             //Location to spawn obstacle : Jonathan
             List<Index> obstacles = new List<Index>() {
-                new Index(rand.Next(10,20)/*height*/,rand.Next(0,70)/*Width*/),
-                new Index(rand.Next( 1,20),rand.Next (34,70)),
-                new Index(rand.Next(14,20),rand.Next(12,70)),
-                new Index(rand.Next(8,20),rand.Next(26,70)),
-                new Index(rand.Next(2,20),rand.Next(3,70)),
-                new Index(rand.Next(2,20),rand.Next(1,70)),
-                new Index(rand.Next(4,20),rand.Next(3,70)),
-                new Index(rand.Next(1,20),rand.Next(1,70)),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
             };
 
             //Spawning obstacle : Jonathan
