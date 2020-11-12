@@ -89,15 +89,24 @@ namespace SnakeGame
             int x = 0, y = 2; // y is 2 to allow the top row for directions & space
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
-            string food = "@";
-            string sfood = "$";
-            int lastsFoodTime = 0;
 
-            string obs = "|";
+            //Food initialise
+            string food = "@";
             int lastFoodTime = 0;
             int foodDissapearTime = 10000;
+
+            //Obstables initialise
+            string obs = "|";
+
+            //Special Food Initialise
+            string sfood = "$";
+            int lastsFoodTime = 0;
             lastsFoodTime = Environment.TickCount;
+
+
             Random rand = new Random(); //inputs random numbers
+
+
             // Direction modification: Lewis Chin
             byte right = 0;
             byte left = 1;
@@ -124,23 +133,27 @@ namespace SnakeGame
 
             //Location to spawn obstacle : Jonathan
             List<Index> obstacles = new List<Index>() {
-                new Index(rand.Next(10,20)/*height*/,rand.Next(0,70)/*Width*/),
-                new Index(rand.Next( 1,20),rand.Next (34,70)),
-                new Index(rand.Next(14,20),rand.Next(12,70)),
-                new Index(rand.Next(8,20),rand.Next(26,70)),
-                new Index(rand.Next(2,20),rand.Next(3,70)),
-                new Index(rand.Next(2,20),rand.Next(1,70)),
-                new Index(rand.Next(4,20),rand.Next(3,70)),
-                new Index(rand.Next(1,20),rand.Next(1,70)),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
+                new Index(rand.Next(0,consoleHeightLimit)/*height*/,rand.Next(0,consoleWidthLimit)/*Width*/),
             };
 
             //Spawning obstacle : Jonathan
+            //Updated by : Lee Zhe Sheng
             foreach (Index obstacle in obstacles)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.SetCursorPosition(obstacle.indexx, obstacle.indexy);
                 Console.Write(obs);
             }
+
+
             // Merge food and snake elements : Lewis Chin
             Queue<Index> elements = new Queue<Index>();
             for (int i = 0; i <= 2; i++)
@@ -293,7 +306,7 @@ namespace SnakeGame
                 }
 
                 
-                //Special food spawn
+                //Special food spawn: Lee Zhe Sheng
                 if (snakeNewHead.indexx == sfruit.indexx && snakeNewHead.indexy == sfruit.indexy)
                 {
                     //Eat Sound : Jonathan Lee
@@ -328,19 +341,13 @@ namespace SnakeGame
                 {
                     Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
                     Console.Write(" ");
-                    do
-                    {
-                        sfruit = new Index(rand.Next(0, consoleHeightLimit),rand.Next(0, consoleWidthLimit));
-                    }
-                    while (elements.Contains(sfruit) || obstacles.Contains(sfruit));
-                    lastsFoodTime = Environment.TickCount;
+                                    
                 }
                 Console.SetCursorPosition(sfruit.indexx, sfruit.indexy);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write(sfood);
 
 
-                
 
                 foreach (Index obstacle in obstacles)
                 {
@@ -356,13 +363,6 @@ namespace SnakeGame
                     }
 
                 }
-
-                
-
-                // write the character in the new position
-
-                // length add after eat: Lewis Chin
-
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
