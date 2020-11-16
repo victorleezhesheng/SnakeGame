@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lawlm\\Desktop\\Y2S2\\DP1\\Week by week\\Week 4\\Activities\\SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lawlm\\Desktop\\Y2S2\\DP1\\Week by week\\Week 4\\Activities\\SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lawlm\\Desktop\\Y2S2\\DP1\\Week by week\\Week 4\\Activities\\SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
         "projectName": "SnakeGame",
-        "projectPath": "C:\\Users\\lawlm\\Desktop\\Y2S2\\DP1\\Week by week\\Week 4\\Activities\\SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
-        "packagesPath": "C:\\Users\\lawlm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lawlm\\Desktop\\Y2S2\\DP1\\Week by week\\Week 4\\Activities\\SnakeGame\\SnakeGame\\SnakeGame\\obj\\",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\SnakeGame\\SnakeGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lawlm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -30,7 +30,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.NETCore.Platforms": {
               "target": "Package",
@@ -68,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

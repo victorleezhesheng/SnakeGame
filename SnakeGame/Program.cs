@@ -11,7 +11,7 @@ using WMPLib;
 namespace SnakeGame
 {
     //Position of food : Jonathan
-    class Index
+    public class Index
     {
         public int indexx;
         public int indexy;
@@ -36,7 +36,7 @@ namespace SnakeGame
 
     }
 
-    class ScoreName //ScoreName : Jonathan lee 
+    public class ScoreName //ScoreName : Jonathan lee 
     {
         public string name;
         public ScoreName(string names)
